@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* Set font to 1rem = 10px */
 }
 
 *,
@@ -10,12 +9,12 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1rem;
   background-color: #ecf0f1;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
