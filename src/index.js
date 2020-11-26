@@ -1,20 +1,11 @@
-import './main.css';
+import './css/main.css';
+import { getEntry, CF } from './js/contentful';
+import registerElements from './js/customElements';
 
-const h1 = document.querySelector('h1');
-h1.classList.add('styles-h1');
+registerElements();
 
-function greet(name) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(`Hello ${name}!`);
-    }, 1000);
-  });
-}
+const main = () => {
+    // getEntry(CF.entries.title);
+};
 
-async function print() {
-  // Here we are using dynamic import
-  const response = await greet('John Doe');
-  console.log(response);
-}
-
-print();
+main();

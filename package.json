@@ -44,6 +44,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
+    "@contentful/rich-text-html-renderer": "^14.1.2",
+    "contentful": "^7.15.0",
     "core-js": "^3.6.4"
   },
   "browserslist": [
