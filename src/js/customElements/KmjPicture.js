@@ -6,11 +6,11 @@ export default class KmjPicture extends HTMLElement {
         super();
 
         const defaultSize = {
-
+            default: { w: 400 },
         };
 
         this.cfAssetKey = this.getAttribute('data-cf-asset');
-        this.sizes = { ...defaultSize, ...JSON.parse(this.getAttribute('data-sizes')) };
+        this.sizes = { ...defaultSize, ...JSON.parse(this.getAttribute('data-sizes') || '{}') };
     }
 
     // observe the loading attribute
@@ -55,7 +55,6 @@ export default class KmjPicture extends HTMLElement {
                 this.innerHTML = 'Laden nicht möglich...';
                 return false;
             }
-            console.log(this.asset.fields);
             const picture = getPictureNode({
                 title,
                 description,

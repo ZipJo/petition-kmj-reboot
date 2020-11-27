@@ -1,15 +1,9 @@
-html {
-  box-sizing: border-box;
-}
+@import "font";
+@import "theme";
+@import "~bootstrap/scss/bootstrap";
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
 body {
-  font-size: 1rem;
   background-color: #ecf0f1;
   margin: 0;
   padding: 0;
@@ -17,7 +11,4 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  h4 {
-    font-size: 2rem;
-  }
 }
