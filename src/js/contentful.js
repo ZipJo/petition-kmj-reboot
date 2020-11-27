@@ -54,6 +54,7 @@ export function getPictureNode(props) {
     const {
         title, description, file, sizes,
     } = props;
+    file.url = `https:${file.url}`;
     const { contentType, url } = file;
     const isJpg = (contentType === 'image/jpg');
     const isPng = (contentType === 'image/png');
