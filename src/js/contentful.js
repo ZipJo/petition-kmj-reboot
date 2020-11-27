@@ -16,7 +16,20 @@ export async function getEntry(entryID) {
             retVal = entry;
             return true;
         })
-        .catch((err) => console.err(entryID, err));
+        .catch((err) => console.error(entryID, err));
+    return retVal;
+}
+
+// returns the asset or false if something went wrong
+export async function getAsset(assetID) {
+    let retVal = false;
+    await client
+        .getAsset(assetID)
+        .then((entry) => {
+            retVal = entry;
+            return true;
+        })
+        .catch((err) => console.error(assetID, err));
     return retVal;
 }
 
@@ -35,3 +48,19 @@ export const CF = {
         chance: '5eWwtetrfgmi2Ov6Pkajy',
     },
 };
+
+// returns a responsive picture node with the given parameters
+export function getPictureNode(props) {
+    const { stuff } = props;
+    const picture = document.createElement('picture');
+    `<picture>
+    <source type="image/webp" srcSet="https://contentful.com/test.jpg?fit=fill&fm=webp&h=500&q=85&w=500,
+    https://contentful.com/test.jpg?fit=fill&fm=webp&h=1000&q=35&w=1000 2x,
+    https://contentful.com/test.jpg?fit=fill&fm=webp&h=1500&q=25&w=1500 3x" />
+    <source type="image/jpeg" srcSet="https://contentful.com/test.jpg?fit=fill&fl=progressive&fm=jpg&h=500&q=85&w=500,
+    https://contentful.com/test.jpg?fit=fill&fl=progressive&fm=jpg&h=1000&q=35&w=1000 2x,
+    https://contentful.com/test.jpg?fit=fill&fl=progressive&fm=jpg&h=1500&q=25&w=1500 3x" />
+    <img src="https://contentful.com/test.jpg?fit=fill&fl=progressive&fm=jpg&h=500&q=85&w=500" class="react-contentful-image" />
+    </picture>`;
+    return picture;
+}

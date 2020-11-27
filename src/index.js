@@ -1,4 +1,4 @@
-import './css/main.css';
+import './scss/main.scss';
 import { getEntry, CF } from './js/contentful';
 import registerElements from './js/customElements';
 

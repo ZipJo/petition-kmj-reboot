@@ -2,10 +2,9 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { getEntry, CF } from '../contentful';
 
 export default class KmjSection extends HTMLElement {
-    // construct the custom Element, add a shadowDom and define local fields
+    // construct the custom Element and define local fields
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
 
         this.cfEntryKey = this.getAttribute('data-cf-entry');
         this.titleSize = this.getAttribute('data-title-size') || 4;
@@ -43,13 +42,16 @@ export default class KmjSection extends HTMLElement {
         this.render();
     }
 
+    // main render method
     render() {
         if (this.loading) {
-            this.shadowRoot.innerHTML = 'Loading...';
+            this.innerHTML = 'Wird geladen...';
         } else {
             const { title, text, images } = this.entry.fields;
-            if (!title) return this.shadowRoot.textContent = 'Something went wrong while loading the content!';
-            console.log(this.entry.fields);
+            if (!title) {
+                this.innerHTML = 'Laden nicht möglich...';
+                return false;
+            }
             const section = document.createElement('section');
 
             const titleElem = section.appendChild(document.createElement(`h${this.titleSize}`));
@@ -62,8 +64,9 @@ export default class KmjSection extends HTMLElement {
             if (images) {
                 console.log(images);
             }
-            this.shadowRoot.textContent = '';
-            this.shadowRoot.appendChild(section);
+            // replace this Element with newly created Element
+            this.parentElement.replaceChild(section, this);
         }
+        return true;
     }
 }
