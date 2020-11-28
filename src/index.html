@@ -23,7 +23,7 @@
                         "xs": {"w": 576},
                         "sm": {"w": 868},
                         "md": {"w": 1192},
-                        "lg": {"w": 1600},
+                        "lg": {"w": 1400},
                         "xl": {"w": 1920}
                     }'
                 ></kmj-picture>
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </header>
-        <main class='container-fluid container-lg'>
+        <main class='container-fluid container-xl'>
             <div class='row mb-5'>
                 <div class='col-12 col-sm-6'>
                     <section class="card h-100">
@@ -96,7 +96,40 @@
                                 <h4 class="my-1" data-content="howto.title"></h4>
                                 <kmj-caret class="m-1"></kmj-caret>
                             </nav>
-                            <div id="kmj-howto" class="card-body collapse" data-content="howto.text"></div>
+                            <div id="kmj-howto" class="card-body collapse">
+                                <div class="row">
+                                    <div class="col-12" data-content="howto.text"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="d-none d-lg-block col-12">
+                                        <kmj-picture class="w-100" data-cf-asset="processFull" data-sizes='{"default": {"w": 1920}}'></kmj-picture>
+                                    </div>
+                                    <div class="d-lg-none col-12">
+                                        <kmj-picture
+                                        class="w-100 mb-2"
+                                        data-cf-asset="processHalfOne"
+                                        data-sizes='{
+                                            "default": {"w": 1400},
+                                            "xs": {"w": 576},
+                                            "sm": {"w": 868},
+                                            "md": {"w": 1192},
+                                            "lg": {"w": 1400}
+                                        }'
+                                    ></kmj-picture>
+                                    <kmj-picture
+                                    class="w-100"
+                                    data-cf-asset="processHalfTwo"
+                                    data-sizes='{
+                                        "default": {"w": 1400},
+                                        "xs": {"w": 576},
+                                        "sm": {"w": 868},
+                                        "md": {"w": 1192},
+                                        "lg": {"w": 1400}
+                                    }'
+                                ></kmj-picture>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
