@@ -69,6 +69,7 @@ export default class KmjReason extends HTMLElement {
                 className: this.getAttribute('class'),
             });
             const pictureElem = containerElem.appendChild(document.createElement('div'));
+            pictureElem.classList.add('d-flex', 'justify-content-center');
             pictureElem.appendChild(picture);
             const titleElem = containerElem.appendChild(document.createElement('h6'));
             titleElem.innerText = title;

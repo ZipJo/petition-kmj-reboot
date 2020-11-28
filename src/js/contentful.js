@@ -38,6 +38,7 @@ export async function getAsset(assetID) {
 export const CF = {
     assets: {
         logo: '2tJSFVbXNcS1TTeOQmgj3E',
+        videoPreview: '7qBRMj5j8hOcY5C3LhHrss',
     },
     entries: {
         videoAnimation: '4RTJm9cKBi8eR7pZSLxdrz',

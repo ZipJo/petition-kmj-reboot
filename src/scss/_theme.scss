@@ -14,3 +14,13 @@ $container-max-widths: (
   lg: 1160px,
   xl: 1540px,
 );
+
+$theme-colors: (
+  "primary": #F6D82E,
+  "secondary": #E94E33,
+  "light": #F6F6F6,
+  "gray": #575656,
+  "dark": #373736,
+);
+  
+$spacer: 2rem;

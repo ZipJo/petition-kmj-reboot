@@ -1,4 +1,4 @@
-const caretHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+const caretHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48px" height="48px">
     <g data-name="Layer 2">
         <g data-name="arrow-ios-downward">
             <rect width="24" height="24" opacity="0"/>
