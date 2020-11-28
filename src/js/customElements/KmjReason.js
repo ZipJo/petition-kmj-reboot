@@ -1,6 +1,10 @@
-import { getAsset, CF, getPictureNode } from '../contentful';
+import {
+    getAsset, CF, getEntry, getPictureNode,
+} from '../contentful';
 
-export default class KmjPicture extends HTMLElement {
+const reasonEntry = getEntry(CF.entries.sixReasons);
+
+export default class KmjReason extends HTMLElement {
     // construct the custom Element and define local fields
     constructor() {
         super();
@@ -9,7 +13,7 @@ export default class KmjPicture extends HTMLElement {
             default: { w: 400 },
         };
 
-        this.cfAssetKey = this.getAttribute('data-cf-asset');
+        this.reason = this.getAttribute('data-reason');
         this.sizes = { ...defaultSize, ...JSON.parse(this.getAttribute('data-sizes') || '{}') };
     }
 
@@ -28,8 +32,9 @@ export default class KmjPicture extends HTMLElement {
     // get the stuff from contentful and set loading to true afterwards
     async fetchData(key) {
         this.loading = true;
-        const cfAsset = await getAsset(CF.assets[key]);
-        if (!cfAsset) return console.warn(`${key} is not a valid contentful asset key: ${CF.assets[key]}`);
+        const { fields: { images } } = await reasonEntry;
+        const { fields: cfAsset } = images[key];
+        if (!cfAsset) return console.warn(`${key} is not a valid contentful asset key: ${images[key]}`);
 
         this.asset = cfAsset;
         this.loading = false;
@@ -37,7 +42,7 @@ export default class KmjPicture extends HTMLElement {
     }
 
     async connectedCallback() {
-        await this.fetchData(this.cfAssetKey);
+        await this.fetchData(this.reason);
     }
 
     // call render anytime the observer notices a change
@@ -49,12 +54,13 @@ export default class KmjPicture extends HTMLElement {
         if (this.loading) {
             this.innerHTML = 'Wird geladen...';
         } else {
-            const { title, description, file } = this.asset.fields;
+            const { title, description, file } = this.asset;
             const { sizes } = this;
             if (!title) {
                 this.innerHTML = 'Laden nicht möglich...';
                 return false;
             }
+            const containerElem = document.createElement('div');
             const picture = getPictureNode({
                 title,
                 description,
@@ -62,8 +68,14 @@ export default class KmjPicture extends HTMLElement {
                 sizes,
                 className: this.getAttribute('class'),
             });
+            const pictureElem = containerElem.appendChild(document.createElement('div'));
+            pictureElem.appendChild(picture);
+            const titleElem = containerElem.appendChild(document.createElement('h6'));
+            titleElem.innerText = title;
+            const textElem = containerElem.appendChild(document.createElement('p'));
+            textElem.innerHTML = description;
             // replace this Element with newly created Element
-            this.parentElement.replaceChild(picture, this);
+            this.parentElement.replaceChild(containerElem, this);
         }
         return true;
     }

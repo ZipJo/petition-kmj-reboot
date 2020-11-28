@@ -1,1 +1,16 @@
 $font-family-base: 'Montserrat';
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 868px,
+  lg: 1192px,
+  xl: 1600px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 820px,
+  lg: 1160px,
+  xl: 1540px,
+);

@@ -1,11 +1,7 @@
 import './scss/main.scss';
-import { getEntry, CF } from './js/contentful';
+import 'bootstrap';
 import registerElements from './js/customElements';
+import { setContent } from './js/contentful';
 
+setContent();
 registerElements();
-
-const main = () => {
-    // getEntry(CF.entries.title);
-};
-
-main();

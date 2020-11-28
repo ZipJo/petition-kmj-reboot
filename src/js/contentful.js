@@ -1,3 +1,4 @@
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { createClient } from 'contentful';
 
 const credentials = {
@@ -52,7 +53,7 @@ export const CF = {
 // returns a responsive picture node with the given parameters
 export function getPictureNode(props) {
     const {
-        title, description, file, sizes,
+        title, description, file, sizes, className,
     } = props;
     file.url = `https:${file.url}`;
     const { contentType, url } = file;
@@ -144,9 +145,18 @@ export function getPictureNode(props) {
         imgElement.setAttribute('title', title);
         imgElement.setAttribute('alt', description);
         imgElement.setAttribute('src', imgSrc);
+        if (className) imgElement.setAttribute('class', className);
 
         picture.appendChild(imgElement);
     }
 
     return picture;
+}
+
+export function setContent() {
+    document.querySelectorAll('[data-content]').forEach(async (element) => {
+        const selector = element.getAttribute('data-content').split('.');
+        const entry = await getEntry(CF.entries[selector[0]]);
+        element.innerHTML = typeof entry.fields[selector[1]] === 'string' ? entry.fields[selector[1]] : documentToHtmlString(entry.fields[selector[1]]);
+    });
 }

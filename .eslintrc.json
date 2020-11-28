@@ -14,6 +14,7 @@
         "linebreak-style": ["error", "windows"],
         "indent": ["error", 4],
         "max-len": ["error", { "code": 160 }],
-        "no-return-assign": "off"
+        "no-return-assign": "off",
+        "no-param-reassign": "off"
     }
 }

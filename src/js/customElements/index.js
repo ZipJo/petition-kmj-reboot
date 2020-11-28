@@ -1,9 +1,9 @@
-import KmjCollapse from './KmjCollapse';
+import KmjCaret from './KmjCaret';
 import KmjPicture from './KmjPicture';
-import KmjSection from './KmjSection';
+import KmjReason from './KmjReason';
 
 export default function registerElements() {
-    customElements.define('kmj-section', KmjSection);
-    customElements.define('kmj-collapse', KmjCollapse);
+    customElements.define('kmj-caret', KmjCaret);
     customElements.define('kmj-picture', KmjPicture);
+    customElements.define('kmj-reason', KmjReason);
 }
