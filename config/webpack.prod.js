@@ -119,6 +119,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(ROOT_DIRECTORY, 'src/index.html'),
             filename: 'index.html',
+            favicon: path.resolve(ROOT_DIRECTORY, 'src/favicon.png'),
             minify: {
                 collapseWhitespace: true,
                 removeComments: true,
