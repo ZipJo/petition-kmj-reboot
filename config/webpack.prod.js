@@ -7,6 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safePostCssParser = require('postcss-safe-parser');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const ROOT_DIRECTORY = process.cwd();
 
@@ -146,6 +147,11 @@ module.exports = {
             filename: '[path].br[query]',
             minRatio: 0.8,
             test: /\.(js|css|html|svg)$/,
+        }),
+        new CopyPlugin({
+            patterns: [
+                path.resolve(ROOT_DIRECTORY, 'src/.htaccess'),
+            ],
         }),
     ],
     optimization: {
