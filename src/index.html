@@ -7,20 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+
     <header class="container-fluid px-0 mb-3">
         <nav class="navbar">
-            <a href='#' class='navbar-brand'>
+            <a class='navbar-brand' target="_blank" data-href="website">
                 <kmj-picture data-asset="logo" data-sizes='{"default": {"w": 300}}'></kmj-picture>
             </a>
-            <button class='btn btn-secondary btn-lg font-weight-bold' href="#">JETZT unterschreiben</button>
+            <button class='btn btn-secondary btn-lg font-weight-bold' target="_blank" data-href="petition">JETZT unterschreiben</button>
         </nav>
+
         <div class='kmj-videopreview'>
             <a
-                class='h-100'
-                href="#"
+                class='h-100 cursor-pointer'
                 data-toggle="modal"
                 data-target="#kmj-video"
-                data-src="https://www.youtube.com/embed/bERzQz1WFIc"
+                data-youtube="https://www.youtube.com/embed/bERzQz1WFIc"
             >
                 <kmj-picture
                     class="w-100"
@@ -51,159 +52,169 @@
                 </div>
             </div>
         </div>
-    <div class='d-flex justify-content-center'>
-        <div class='kmj-title-logo'>
-            <kmj-picture data-asset="kmjTitle" data-sizes='{"default": {"w": 500}}'></kmj-picture>
-        </div>
-    </div>
-</header>
-<main class='container-fluid container-xl'>
-    <div class='row mb-5'>
-        <div class='col-12 col-sm-6'>
-            <section class="card mr-sm-2 h-100">
-                <div class="card-title">
-                    <h4 data-content="demand.title"></h4>
-                </div>
-                <div class="card-body" data-content="demand.text"></div>
-            </section>
-        </div>
-        <div class='col-12 col-sm-6'>
-            <section class="card ml-sm-2 h-100">
-                <div class="card-title">
-                    <h4 data-content="reasoning.title"></h4>
-                </div>
-                <div class="card-body" data-content="reasoning.text"></div>
-            </section>
-        </div>
-    </div>
-    <div class='row justify-content-center mb-5'>
-        <button class='btn btn-secondary btn-lg font-weight-bold' href="#">JETZT unterschreiben</button>
-    </div>
-    <div class='row mb-4'>
-        <div class='col-12'>
-            <section class="card">
-                <div class="card-title">
-                    <h3 data-content="sixReasons.title"></h3>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6 col-md-4 col-lg-2 px-1">
-                            <kmj-reason data-reason="0" data-sizes='{"default": {"w": 150}}'></kmj-reason>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 px-1">
-                            <kmj-reason data-reason="1" data-sizes='{"default": {"w": 150}}'></kmj-reason>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 px-1">
-                            <kmj-reason data-reason="2" data-sizes='{"default": {"w": 150}}'></kmj-reason>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 px-1">
-                            <kmj-reason data-reason="3" data-sizes='{"default": {"w": 150}}'></kmj-reason>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 px-1">
-                            <kmj-reason data-reason="4" data-sizes='{"default": {"w": 150}}'></kmj-reason>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 px-1">
-                            <kmj-reason data-reason="5" data-sizes='{"default": {"w": 150}}'></kmj-reason>
-                        </div>
-                    </div>
-                </div>
+
+        <div class='d-flex justify-content-center'>
+            <div class='kmj-title-logo'>
+                <kmj-picture data-asset="kmjTitle" data-sizes='{"default": {"w": 500}}'></kmj-picture>
             </div>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-12">
-            <section class="card">
-                <div class="card-title mb-0">
-                    <nav class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" href="#kmj-howto" role="button" aria-expanded="false">
-                        <h4 class="my-1" data-content="howto.title"></h4>
-                        <kmj-caret class="m-1"></kmj-caret>
-                    </nav>
-                    <div id="kmj-howto" class="card-body collapse">
+    </header>
+
+    <main class='container-fluid container-xl'>
+        <div class='row mb-5'>
+            <div class='col-12 col-sm-6'>
+                <section class="card mr-sm-2 h-100">
+                    <div class="card-title">
+                        <h4 data-content="demand.title"></h4>
+                    </div>
+                    <div class="card-body" data-content="demand.text"></div>
+                </section>
+            </div>
+            <div class='col-12 col-sm-6'>
+                <section class="card ml-sm-2 h-100">
+                    <div class="card-title">
+                        <h4 data-content="reasoning.title"></h4>
+                    </div>
+                    <div class="card-body" data-content="reasoning.text"></div>
+                </section>
+            </div>
+        </div>
+
+        <div class='row justify-content-center mb-5'>
+            <button class='btn btn-secondary btn-lg font-weight-bold' target="_blank" data-href="petition">JETZT unterschreiben</button>
+        </div>
+
+        <div class='row mb-4'>
+            <div class='col-12'>
+                <section class="card">
+                    <div class="card-title">
+                        <h3 data-content="sixReasons.title"></h3>
+                    </div>
+                    <div class="card-body">
                         <div class="row">
-                            <div class="col-12" data-content="howto.text"></div>
-                        </div>
-                        <div class="row">
-                            <div class="d-none d-lg-block col-12">
-                                <kmj-picture class="w-100" data-asset="processFull" data-sizes='{"default": {"w": 1920}}'></kmj-picture>
+                            <div class="col-6 col-md-4 col-lg-2 px-1">
+                                <kmj-reason data-reason="0" data-sizes='{"default": {"w": 150}}'></kmj-reason>
                             </div>
-                            <div class="d-lg-none col-12">
-                                <kmj-picture
-                                    class="w-100 mb-2"
-                                    data-asset="processHalfOne"
-                                    data-sizes='{
-                                        "default": {"w": 1400},
-                                        "xs": {"w": 576},
-                                        "sm": {"w": 868},
-                                        "md": {"w": 1192},
-                                        "lg": {"w": 1400}
-                                    }'
-                                ></kmj-picture>
-                                <kmj-picture
-                                    class="w-100"
-                                    data-asset="processHalfTwo"
-                                    data-sizes='{
-                                        "default": {"w": 1400},
-                                        "xs": {"w": 576},
-                                        "sm": {"w": 868},
-                                        "md": {"w": 1192},
-                                        "lg": {"w": 1400}
-                                    }'
-                                ></kmj-picture>
+                            <div class="col-6 col-md-4 col-lg-2 px-1">
+                                <kmj-reason data-reason="1" data-sizes='{"default": {"w": 150}}'></kmj-reason>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 px-1">
+                                <kmj-reason data-reason="2" data-sizes='{"default": {"w": 150}}'></kmj-reason>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 px-1">
+                                <kmj-reason data-reason="3" data-sizes='{"default": {"w": 150}}'></kmj-reason>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 px-1">
+                                <kmj-reason data-reason="4" data-sizes='{"default": {"w": 150}}'></kmj-reason>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 px-1">
+                                <kmj-reason data-reason="5" data-sizes='{"default": {"w": 150}}'></kmj-reason>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-12">
-            <section class="card">
-                <div class="card-title mb-0">
-                    <nav class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" href="#kmj-why" role="button" aria-expanded="false">
-                        <h4 class="my-1" data-content="why.title"></h4>
-                        <kmj-caret class="m-1"></kmj-caret>
-                    </nav>
-                    <div id="kmj-why" class="card-body collapse" data-content="why.text"></div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <section class="card">
+                    <div class="card-title mb-0">
+                        <nav class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" href="#kmj-howto" role="button" aria-expanded="false">
+                            <h4 class="my-1" data-content="howto.title"></h4>
+                            <kmj-caret class="m-1"></kmj-caret>
+                        </nav>
+                        <div id="kmj-howto" class="card-body collapse">
+                            <div class="row">
+                                <div class="col-12" data-content="howto.text"></div>
+                            </div>
+                            <div class="row">
+                                <div class="d-none d-lg-block col-12">
+                                    <kmj-picture class="w-100" data-asset="processFull" data-sizes='{"default": {"w": 1920}}'></kmj-picture>
+                                </div>
+                                <div class="d-lg-none col-12">
+                                    <kmj-picture
+                                        class="w-100 mb-2"
+                                        data-asset="processHalfOne"
+                                        data-sizes='{
+                                            "default": {"w": 1400},
+                                            "xs": {"w": 576},
+                                            "sm": {"w": 868},
+                                            "md": {"w": 1192},
+                                            "lg": {"w": 1400}
+                                        }'
+                                    ></kmj-picture>
+                                    <kmj-picture
+                                        class="w-100"
+                                        data-asset="processHalfTwo"
+                                        data-sizes='{
+                                            "default": {"w": 1400},
+                                            "xs": {"w": 576},
+                                            "sm": {"w": 868},
+                                            "md": {"w": 1192},
+                                            "lg": {"w": 1400}
+                                        }'
+                                    ></kmj-picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-12">
-            <section class="card">
-                <div class="card-title mb-0">
-                    <nav class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" href="#kmj-chance" role="button" aria-expanded="false">
-                        <h4 class="my-1" data-content="chance.title"></h4>
-                        <kmj-caret class="m-1"></kmj-caret>
-                    </nav>
-                    <div id="kmj-chance" class="card-body collapse" data-content="chance.text"></div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <section class="card">
+                    <div class="card-title mb-0">
+                        <nav class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" href="#kmj-why" role="button" aria-expanded="false">
+                            <h4 class="my-1" data-content="why.title"></h4>
+                            <kmj-caret class="m-1"></kmj-caret>
+                        </nav>
+                        <div id="kmj-why" class="card-body collapse" data-content="why.text"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-<footer class="container-fluid dark bg-dark pb-1">
-    <div class="row bg-gray justify-content-center">
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold text-uppercase">webseite</a>
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold text-uppercase">kontakt</a>
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold text-uppercase">presse</a>
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold text-uppercase">faq</a>
-    </div>
-    <div class="row justify-content-center mx-auto my-2 kmj-social-media">
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold">
-            <kmj-picture data-asset="iconInstagram" data-sizes='{"default": { "w": 75 }}'></kmj-picture>
-        </a>
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold">
-            <kmj-picture data-asset="iconFacebook" data-sizes='{"default": { "w": 75 }}'></kmj-picture>
-        </a>
-        <a href="#" target="_blank" class="m-1 text-light font-weight-bold">
-            <kmj-picture data-asset="iconTwitter" data-sizes='{"default": { "w": 75 }}'></kmj-picture>
-        </a>
-    </div>
-    <div class="row justify-content-center mb-1">
-        <span class="text-light font-weight-bold"><a href="#" target="_blank" class="text-light">Impressum</a> - © Klima-Mitbestimmung JETZT! - 2020</span>
-    </div>
-</footer>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <section class="card">
+                    <div class="card-title mb-0">
+                        <nav class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse" href="#kmj-chance" role="button" aria-expanded="false">
+                            <h4 class="my-1" data-content="chance.title"></h4>
+                            <kmj-caret class="m-1"></kmj-caret>
+                        </nav>
+                        <div id="kmj-chance" class="card-body collapse" data-content="chance.text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid dark bg-dark pb-1">
+        <div class="row bg-gray justify-content-center">
+            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="website">webseite</a>
+            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="constact">kontakt</a>
+            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="press">presse</a>
+            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="faq">faq</a>
+        </div>
+
+        <div class="row justify-content-center mx-auto my-2 kmj-social-media">
+            <a class="m-1 text-light font-weight-bold" target="_blank" data-href="instagram">
+                <kmj-picture data-asset="iconInstagram" data-sizes='{"default": { "w": 75 }}'></kmj-picture>
+            </a>
+            <a class="m-1 text-light font-weight-bold" target="_blank" data-href="facebook">
+                <kmj-picture data-asset="iconFacebook" data-sizes='{"default": { "w": 75 }}'></kmj-picture>
+            </a>
+            <a class="m-1 text-light font-weight-bold" target="_blank" data-href="twitter">
+                <kmj-picture data-asset="iconTwitter" data-sizes='{"default": { "w": 75 }}'></kmj-picture>
+            </a>
+        </div>
+
+        <div class="row justify-content-center mb-1">
+            <span class="text-light font-weight-bold"><a class="text-light" target="_blank" data-href="imprint">Impressum</a> - © Klima-Mitbestimmung JETZT! - 2020</span>
+        </div>
+    </footer>
 </body>
 </html>
