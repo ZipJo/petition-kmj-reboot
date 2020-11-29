@@ -38,10 +38,14 @@ export async function getAsset(assetID) {
 export const CF = {
     assets: {
         logo: '2tJSFVbXNcS1TTeOQmgj3E',
+        kmjTitle: '1fhbOrXkzr27nKSzYBYyzb',
         videoPreview: '7qBRMj5j8hOcY5C3LhHrss',
         processFull: '4gZnqFAQCjm6UeFvvdjhIT',
         processHalfOne: '23NWu5VGXcoKQGnEwk0mIn',
         processHalfTwo: '2WugzDZL7FRHcR5ovk98sr',
+        iconTwitter: '52kF5ASBcp4RylZtU0Y2Mn',
+        iconFacebook: 'fw2Xvx9t0o68u2QvKo0Je',
+        iconInstagram: '74FM4f5d37Ht1hfcViYIzw',
     },
     entries: {
         videoAnimation: '4RTJm9cKBi8eR7pZSLxdrz',

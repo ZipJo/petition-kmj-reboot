@@ -9,7 +9,8 @@ export default class KmjPicture extends HTMLElement {
             default: { w: 400 },
         };
 
-        this.cfAssetKey = this.getAttribute('data-cf-asset');
+        this.assetKey = this.getAttribute('data-asset');
+        this.assetId = CF.assets[this.assetKey];
         this.sizes = { ...defaultSize, ...JSON.parse(this.getAttribute('data-sizes') || '{}') };
     }
 
@@ -26,10 +27,10 @@ export default class KmjPicture extends HTMLElement {
     }
 
     // get the stuff from contentful and set loading to true afterwards
-    async fetchData(key) {
+    async fetchData(id) {
         this.loading = true;
-        const cfAsset = await getAsset(CF.assets[key]);
-        if (!cfAsset) return console.warn(`${key} is not a valid contentful asset key: ${CF.assets[key]}`);
+        const cfAsset = await getAsset(id);
+        if (!cfAsset) return console.warn(`${id} is not a valid contentful asset id.`);
 
         this.asset = cfAsset;
         this.loading = false;
@@ -37,7 +38,8 @@ export default class KmjPicture extends HTMLElement {
     }
 
     async connectedCallback() {
-        await this.fetchData(this.cfAssetKey);
+        if (!this.assetId) return console.warn('not a vaild key:', this.assetKey, ': ', this.assetId);
+        return this.fetchData(this.assetId);
     }
 
     // call render anytime the observer notices a change

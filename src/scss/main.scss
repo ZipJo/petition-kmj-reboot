@@ -2,6 +2,9 @@
 @import "theme";
 @import "~bootstrap/scss/bootstrap";
 
+// --------------- //
+// general styling //
+// --------------- //
 html {
     height: 100%;
 }
@@ -35,7 +38,24 @@ h6 {
     font-weight: bold;
 }
 
-.kmj-cta-logo {
+// ------------------------ //
+// section-specific styling //
+// ------------------------ //
+
+.kmj-videopreview {
+    position: relative;
+    .kmj-playbutton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 30vw;
+        max-height: 15vh;
+    }
+
+}
+
+.kmj-title-logo {
     transform: translateY(-50%);
     img {
         max-width: 80vw;
@@ -45,8 +65,19 @@ h6 {
 .card {
     background: theme-color("light");
     border: unset;
+    // switch out padding and margin to allow smooth collapse of card-body
+    .card-body {
+        padding: 0 1.25rem;
+        >:first-child {
+            margin-top: 1.25rem;
+        }
+        >:last-child {
+            margin-bottom: 1.25rem;
+        }
+    }
 }
 
+// yellow-background animation
 nav.collapsed{
     h1, h2, h3, h4, h5 {
         &::before {
@@ -62,12 +93,6 @@ nav:not(.collapsed) .kmj-caret {
     transform: rotate(180deg);
 }
 
-.card-body {
-    padding: 0 1.25rem;
-    >:first-child {
-        margin-top: 1.25rem;
-    }
-    >:last-child {
-        margin-bottom: 1.25rem;
-    }
+.kmj-social-media {
+    max-width: 80vw;
 }
