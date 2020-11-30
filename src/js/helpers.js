@@ -43,13 +43,12 @@ export const setLinks = () => {
 };
 
 export const scrollSpy = () => {
-    document.querySelectorAll('[data-scroll]').forEach((scrollElem) => {
-        document.addEventListener('scroll', (e) => {
-            if (!scrollElem.classList.contains('scroll') && document.documentElement.scrollTop > 0) {
-                scrollElem.classList.add('scroll');
-            } else if (scrollElem.classList.contains('scroll') && document.documentElement.scrollTop === 0) {
-                scrollElem.classList.remove('scroll');
-            }
-        });
+    const header = document.querySelector('[data-header]');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0 && !header.classList.contains('scroll')) {
+            header.classList.add('scroll');
+        } else if (window.scrollY === 0 && header.classList.contains('scroll')) {
+            header.classList.remove('scroll');
+        }
     });
 };
