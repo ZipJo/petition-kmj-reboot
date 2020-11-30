@@ -3,6 +3,7 @@ const LINKS = {
     petition: 'https://epetitionen.bundestag.de/content/petitionen/_2020/_09/_16/Petition_116046.html',
     constact: 'https://klima-mitbestimmung.jetzt/kontakt',
     press: 'https://klima-mitbestimmung.jetzt/presse',
+    socialMediaKit: 'https://drive.google.com/file/d/10pcoM48CeBvVOIOTzN5sIlpCOVxSJiON/view?usp=sharing',
     faq: 'https://klima-mitbestimmung.jetzt/faq',
     instagram: 'https://www.instagram.com/klimamitbestimmung/',
     facebook: 'https://www.facebook.com/KlimaMitbestimmungJETZT/',
