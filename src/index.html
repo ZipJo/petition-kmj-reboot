@@ -9,12 +9,12 @@
 </head>
 <body>
 
-    <header class="container-fluid px-0 mb-3">
-        <nav class="navbar">
-            <a class='navbar-brand' target="_blank" data-href="website">
-                <kmj-picture data-asset="logo" data-sizes='{"default": {"w": 300}}'></kmj-picture>
+    <header class="container-fluid px-0 mb-md-3">
+        <nav class="navbar" data-scroll>
+            <a class='navbar-brand flex-shrink-1 d-flex mh-100' target="_blank" data-href="website">
+                <kmj-picture class="mw-100 mh-100" data-asset="logo" data-sizes='{"default": {"w": 300}}'></kmj-picture>
             </a>
-            <a class='btn btn-secondary btn-lg font-weight-bold' role="button" target="_blank" data-href="petition">JETZT unterschreiben</a>
+            <a class='flex-shrink-0 btn btn-secondary btn-lg font-weight-bold mx-auto mx-md-0' role="button" target="_blank" data-href="petition">JETZT unterschreiben</a>
         </nav>
 
         <div class='kmj-videopreview'>
@@ -41,7 +41,7 @@
                 </span>
             </a>
             <div class="modal fade" id="kmj-video" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-body">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -54,25 +54,25 @@
             </div>
         </div>
 
-        <div class='d-flex justify-content-center'>
+        <div class='d-flex justify-content-center mb-n3 mb-md-0'>
             <div class='kmj-title-logo'>
                 <kmj-picture data-asset="kmjTitle" data-sizes='{"default": {"w": 500}}'></kmj-picture>
             </div>
         </div>
     </header>
 
-    <main class='container-fluid container-xl'>
+    <main class='container-fluid container-lg px-2 px-sm-3 px-md-4'>
         <div class='row mb-5'>
-            <div class='col-12 col-sm-6'>
-                <section class="card mr-sm-2 h-100">
+            <div class='col-12 col-md-6 mb-3 mb-md-0'>
+                <section class="card mr-md-2 h-100">
                     <div class="card-title">
                         <h4 data-content="demand.title"></h4>
                     </div>
                     <div class="card-body" data-content="demand.text"></div>
                 </section>
             </div>
-            <div class='col-12 col-sm-6'>
-                <section class="card ml-sm-2 h-100">
+            <div class='col-12 col-md-6'>
+                <section class="card ml-md-2 h-100">
                     <div class="card-title">
                         <h4 data-content="reasoning.title"></h4>
                     </div>
@@ -194,12 +194,12 @@
     </main>
 
     <footer class="container-fluid dark bg-dark pb-1">
-        <div class="row bg-gray justify-content-center">
-            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="website">webseite</a>
-            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="constact">kontakt</a>
-            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="press">presse</a>
-            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="socialMediaKit">social media kit</a>
-            <a class="m-1 text-light font-weight-bold text-uppercase" target="_blank" data-href="faq">faq</a>
+        <div class="row bg-gray justify-content-center kmj-footer-links">
+            <a class="m-1 text-light" target="_blank" data-href="website">Webseite</a>
+            <a class="m-1 text-light" target="_blank" data-href="constact">Kontakt</a>
+            <a class="m-1 text-light" target="_blank" data-href="press">Presse</a>
+            <a class="m-1 text-light" target="_blank" data-href="socialMediaKit">Social Media Kit</a>
+            <a class="m-1 text-light" target="_blank" data-href="faq">FAQ</a>
         </div>
 
         <div class="row justify-content-center mx-auto my-2 kmj-social-media">
@@ -214,8 +214,8 @@
             </a>
         </div>
 
-        <div class="row justify-content-center mb-1">
-            <span class="text-light font-weight-bold"><a class="text-light" target="_blank" data-href="imprint">Impressum</a> - © Klima-Mitbestimmung JETZT! - 2020</span>
+        <div class="row justify-content-center mx-2 mb-1">
+            <span class="text-light"><a class="text-light" target="_blank" data-href="imprint">Impressum</a> - © Klima-Mitbestimmung JETZT! - 2020</span>
         </div>
     </footer>
 </body>

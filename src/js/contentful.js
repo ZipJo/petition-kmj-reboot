@@ -40,6 +40,7 @@ export const CF = {
         logo: '2tJSFVbXNcS1TTeOQmgj3E',
         kmjTitle: '1fhbOrXkzr27nKSzYBYyzb',
         videoPreview: '7qBRMj5j8hOcY5C3LhHrss',
+        playButton: '7DUEgVM92RWXGCNVy3mHQU',
         processFull: '4gZnqFAQCjm6UeFvvdjhIT',
         processHalfOne: '23NWu5VGXcoKQGnEwk0mIn',
         processHalfTwo: '2WugzDZL7FRHcR5ovk98sr',

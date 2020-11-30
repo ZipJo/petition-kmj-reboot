@@ -41,3 +41,15 @@ export const setLinks = () => {
         return a.setAttribute('href', link);
     });
 };
+
+export const scrollSpy = () => {
+    document.querySelectorAll('[data-scroll]').forEach((scrollElem) => {
+        document.addEventListener('scroll', (e) => {
+            if (!scrollElem.classList.contains('scroll') && document.documentElement.scrollTop > 0) {
+                scrollElem.classList.add('scroll');
+            } else if (scrollElem.classList.contains('scroll') && document.documentElement.scrollTop === 0) {
+                scrollElem.classList.remove('scroll');
+            }
+        });
+    });
+};

@@ -42,12 +42,49 @@ h6 {
     cursor: pointer;
 }
 
+.modal-xl {
+    max-width: 90vw;
+}
 // ------------------------ //
 // section-specific styling //
 // ------------------------ //
 
+header nav.navbar {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    width: 100%;
+    background-color: white;;
+    box-shadow: 0px 1px 10px #0000003d;
+    height: 12rem;
+    transition: height 200ms ease-in-out, padding 200ms ease-in-out;
+
+    &.scroll {
+        height: 5rem;
+        padding: .5rem 2rem;
+
+        .navbar-brand {
+            opacity: 0;
+            width: 0%;
+            transition: opacity 200ms ease-in-out, width 200ms ease-in-out;
+        }
+        @include media-breakpoint-up(sm) {
+            .navbar-brand {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
+        +.kmj-videopreview {
+            margin-top: 5rem;
+        }
+    }
+}
+
 .kmj-videopreview {
+    margin-top: 12rem;
     position: relative;
+    transition: margin-top 200ms ease-in-out;
     .kmj-playbutton {
         position: absolute;
         top: 50%;
@@ -57,6 +94,16 @@ h6 {
         max-height: 15vh;
     }
 
+}
+
+@include media-breakpoint-up(sm) {
+    header nav.navbar {
+        height: 8rem;
+        flex-wrap: nowrap;
+    }
+    .kmj-videopreview {
+        margin-top: 8rem;
+    }
 }
 
 .kmj-title-logo {
