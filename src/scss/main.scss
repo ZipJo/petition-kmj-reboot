@@ -56,11 +56,11 @@ header nav.navbar {
     width: 100%;
     background-color: white;;
     box-shadow: 0px 1px 10px #0000003d;
-    height: 12rem;
+    height: 13rem;
     transition: height 200ms ease-in-out, padding 200ms ease-in-out;
 
     &.scroll {
-        height: 5rem;
+        height: 7rem;
         padding: .5rem 2rem;
 
         .navbar-brand {
