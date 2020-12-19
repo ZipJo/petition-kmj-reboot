@@ -56,23 +56,31 @@ header nav.navbar {
     width: 100%;
     background-color: white;;
     box-shadow: 0px 1px 10px #0000003d;
+    height: 13rem;
     transition: height 200ms ease-in-out, padding 200ms ease-in-out;
 
     &.scroll {
+        height: 7rem;
         padding: .5rem 2rem;
 
         .navbar-brand {
-            display: none;
+            opacity: 0;
             width: 0%;
             transition: opacity 200ms ease-in-out, width 200ms ease-in-out;
         }
+
         @include media-breakpoint-up(sm) {
 
+            height: 5rem;
+
+            .navbar-text{
+                width: 50%;
+            }
 
             .navbar-brand {
                 display: unset;
                 opacity: 1;
-                width: unset;
+                width: 50%;
             }
         }
 
@@ -99,6 +107,7 @@ header nav.navbar {
 
 @include media-breakpoint-up(sm) {
     header nav.navbar {
+        height: 8rem;
         flex-wrap: nowrap;
     }
     .kmj-videopreview {
