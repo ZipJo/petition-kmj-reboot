@@ -1,46 +1,48 @@
 /* eslint-disable no-console */
 /**
- * ./config/ftp.config looks like this:
+ * ./config/ftp.config.js looks like this:
  * exports.ftpCredentials = {
- *     user: 'USERNAME',
- *     // Password optional, prompted if none given
+ *     username: 'USERNAME',
  *     password: '**********',
  *     host: 'HOSTURL or IP',
- *     remoteRoot: 'probably /httpdocs/',
  *     port: 21,
  * };
-
  */
-const FtpDeploy = require('ftp-deploy');
+const SftpClient = require('ssh2-sftp-client');
+const path = require('path');
 const { ftpCredentials } = require('./config/ftp.config');
 
-const ftpConfig = {
-    localRoot: './build',
-    // upload everything including dot files
-    include: ['*', '**/*', '.*'],
-    // delete ALL existing files at destination before uploading (currently won't delete "."-files)
-    deleteRemote: true,
-    // Passive mode is forced
-    forcePasv: true,
-    // use ftp (mostly, because I can't get sftp to work)
-    sftp: false,
-    ...ftpCredentials,
-};
+async function main() {
+    const client = new SftpClient('upload-test');
+    const localRoot = path.join(__dirname, 'build');
+    const remoteRoot = '/petition.klima-mitbestimmung.jetzt/';
+    const remoteDest = `${remoteRoot}httpdocs/`;
+    const remoteTemp = `${remoteRoot}temp/`;
 
-const ftpDeploy = new FtpDeploy();
+    client.on('upload', (info) => {
+        console.log(`Uploaded ${info.source}`);
+    });
 
-const verbose = (process.argv.includes('vb'));
-if (verbose) {
-    console.log('ftpConfig', ftpConfig);
-    ftpDeploy.on('log', (data) => {
-        console.log(data); // same data as uploading event
-    });
-    ftpDeploy.on('upload-error', (data) => {
-        console.log(data.err); // data will also include filename, relativePath, and other goodies
-    });
+    try {
+        await client.connect(ftpCredentials);
+        await client.mkdir(remoteTemp, true);
+        const rslt = await client.uploadDir(localRoot, remoteTemp);
+        try {
+            await client.rmdir(remoteDest, true);
+        } catch (err) {
+            console.error(err.message);
+        }
+        await client.rename(remoteTemp, remoteDest);
+        return rslt;
+    } finally {
+        client.end();
+    }
 }
 
-ftpDeploy
-    .deploy(ftpConfig)
-    .then((res) => console.log('finished:', res))
-    .catch((err) => console.log(err));
+main()
+    .then((msg) => {
+        console.log(msg);
+    })
+    .catch((err) => {
+        console.log(`main error: ${err.message}`);
+    });
